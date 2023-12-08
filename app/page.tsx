@@ -1,3 +1,5 @@
+import ChartComponent from "../component/chart";
+
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>
-  }
+  return <ChartComponent />
+}
