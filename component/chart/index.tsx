@@ -63,10 +63,10 @@ const ChartComponent: React.FC<ChartComponentProps> = () => {
         };
 
         const container = chartContainerRef.current;
-        if (container) {
+        if (container && !chart) {
           chart = createChart(container, chartOptions);
           // Add series and other chart configurations here
-          const baselineSeries = chart.addBaselineSeries({ baseValue: { type: 'price', price: 25 }, topLineColor: 'rgba( 38, 166, 154, 1)', topFillColor1: 'rgba( 38, 166, 154, 0.28)', topFillColor2: 'rgba( 38, 166, 154, 0.05)', bottomLineColor: 'rgba( 239, 83, 80, 1)', bottomFillColor1: 'rgba( 239, 83, 80, 0.05)', bottomFillColor2: 'rgba( 239, 83, 80, 0.28)' });
+          const baselineSeries = chart.addBaselineSeries({ baseValue: { type: 'price', price: 2300 }, topLineColor: 'rgba( 38, 166, 154, 1)', topFillColor1: 'rgba( 38, 166, 154, 0.28)', topFillColor2: 'rgba( 38, 166, 154, 0.05)', bottomLineColor: 'rgba( 239, 83, 80, 1)', bottomFillColor1: 'rgba( 239, 83, 80, 0.05)', bottomFillColor2: 'rgba( 239, 83, 80, 0.28)' });
           const { o: openPrices, t: timestamps } = result.getBars;
           const transformedData = openPrices.map((value, index) => ({
             value,
@@ -87,7 +87,7 @@ const ChartComponent: React.FC<ChartComponentProps> = () => {
   }, [])
 
   return (
-    <div id="container" style={{ width: '100%', height: '800px' }} ref={chartContainerRef}></div>
+    <div id="container" style={{ height: '100vh' }} ref={chartContainerRef}></div>
   )
 }
 

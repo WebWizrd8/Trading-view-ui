@@ -40,7 +40,7 @@ const getBars = async (chainId: ChainId, tokenAddress: TokenAddress) => {
       symbol: "${tokenAddress}:${chainId}"
       from: ${yesterdayTimestamp}
       to: ${todayTimestamp}
-      resolution: "60"
+      resolution: "30"
       quoteToken: token1
     ) {
       c
