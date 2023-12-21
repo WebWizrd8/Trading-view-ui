@@ -67,3 +67,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#public
+public/static/charting_library/
+public/static/datafeeds/
