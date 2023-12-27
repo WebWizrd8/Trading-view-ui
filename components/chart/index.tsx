@@ -34,9 +34,6 @@ export default function Home() {
   const [isScriptReady, setIsScriptReady] = useState(false);
   return (
     <>
-      <Head>
-        <title>TradingView Charting Library and Next.js</title>
-      </Head>
       <Script
         src="/static/datafeeds/udf/dist/bundle.js"
         strategy="lazyOnload"
