@@ -20,8 +20,9 @@ const defaultWidgetProps: Partial<ChartingLibraryWidgetOptions> = {
   charts_storage_api_version: "1.1",
   client_id: "tradingview.com",
   user_id: "public_user_id",
-  fullscreen: false,
+  fullscreen: true,
   autosize: true,
+  theme: 'dark',
 };
 
 const TVChartContainer = dynamic(
