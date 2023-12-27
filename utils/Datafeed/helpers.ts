@@ -1,20 +1,19 @@
-import { BASE_URL } from "@/constants";
+import { CRYPTOCOMPARE_URL } from "@/constants";
 import axios from "axios";
 
-// Makes requests to DefinedFi API
-export async function makeApiRequest(query: string): Promise<any> {
+// Makes requests to CryptoCompare API
+export async function makeApiRequest(path: string): Promise<any> {
   try {
     const config = {
-      url: BASE_URL,
-      method: "post",
+      url: `${CRYPTOCOMPARE_URL}/${path}`,
+      method: "get",
       headers: {
         'Content-Type': 'application/json',
-        Authorization: process.env.NEXT_PUBLIC_DEFINED_API,
+        Authorization: `Apikey ${process.env.NEXT_PUBLIC_CRYPTOCOMPARE_API}`,
       },
-      data: JSON.stringify({ query }),
     }
     const result = await axios(config);
-    return result.data.data;
+    return result.data;
   } catch (error) {
     throw new Error(`Definedfi request error: ${(error as Error).message}`);
   }

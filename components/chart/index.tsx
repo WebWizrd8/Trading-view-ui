@@ -12,7 +12,7 @@ import {
 } from "@/public/static/charting_library/charting_library";
 
 const defaultWidgetProps: Partial<ChartingLibraryWidgetOptions> = {
-  symbol: "BTC",
+  symbol: "Bitfinex:ETH/USD",
   interval: "1D" as ResolutionString,
   library_path: "/static/charting_library/",
   locale: "en",

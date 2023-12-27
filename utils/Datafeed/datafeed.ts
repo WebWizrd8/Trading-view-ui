@@ -29,7 +29,7 @@ const configurationData: DatafeedConfiguration = {
 };
 
 async function getAllSymbols() {
-  const data = await makeApiRequest('data/v4/all/exchanges');
+  const data = await makeApiRequest('data/v3/all/exchanges');
   let allSymbols: any[] = [];
 
   for (const exchange of configurationData.exchanges) {
