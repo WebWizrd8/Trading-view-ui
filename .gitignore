@@ -69,5 +69,4 @@ yarn-error.log*
 next-env.d.ts
 
 #public
-public/static/charting_library/
-public/static/datafeeds/
+/public
