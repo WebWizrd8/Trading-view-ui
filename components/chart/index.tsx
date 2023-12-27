@@ -4,6 +4,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import Script from "next/script";
+import datafeed from "@/utils/Datafeed/datafeed";
 
 import {
   ChartingLibraryWidgetOptions,
@@ -11,7 +12,7 @@ import {
 } from "@/public/static/charting_library/charting_library";
 
 const defaultWidgetProps: Partial<ChartingLibraryWidgetOptions> = {
-  symbol: "AAPL",
+  symbol: "BTC",
   interval: "1D" as ResolutionString,
   library_path: "/static/charting_library/",
   locale: "en",

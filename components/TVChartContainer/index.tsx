@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import { useEffect, useRef } from "react";
 import { ChartingLibraryWidgetOptions, LanguageCode, ResolutionString, widget } from "@/public/static/charting_library";
+import DataFeed from "@/utils/Datafeed/datafeed";
 
 export const TVChartContainer = (props: Partial<ChartingLibraryWidgetOptions>) => {
 	const chartContainerRef =
@@ -18,6 +19,9 @@ export const TVChartContainer = (props: Partial<ChartingLibraryWidgetOptions>) =
 					expectedOrder: "latestFirst",
 				}
 			),
+			// datafeed: new (window as any).Datafeeds.UDFCompatibleDatafeed(
+			// 	DataFeed
+			// ),
 			interval: props.interval as ResolutionString,
 			container: chartContainerRef.current,
 			library_path: props.library_path,

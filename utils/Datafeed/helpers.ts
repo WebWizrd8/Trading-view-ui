@@ -1,8 +1,20 @@
+import { BASE_URL } from "@/constants";
+import axios from "axios";
+
 // Makes requests to DefinedFi API
-export async function makeApiRequest(path: string): Promise<any> {
+export async function makeApiRequest(query: string): Promise<any> {
   try {
-    const response = await fetch(`https://graph.defined.fi/graphql/${path}`);
-    return response.json();
+    const config = {
+      url: BASE_URL,
+      method: "post",
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: process.env.NEXT_PUBLIC_DEFINED_API,
+      },
+      data: JSON.stringify({ query }),
+    }
+    const result = await axios(config);
+    return result.data.data;
   } catch (error) {
     throw new Error(`Definedfi request error: ${(error as Error).message}`);
   }
